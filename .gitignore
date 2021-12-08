@@ -1,3 +1,5 @@
 build/
+.devcontainer/
+.vscode/
 sdkconfig
 sdkconfig.old

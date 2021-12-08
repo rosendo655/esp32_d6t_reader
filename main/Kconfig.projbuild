@@ -1,0 +1,34 @@
+menu "Fall Detection Configuration"
+
+    config FD_WIFI_SSID
+        string "SSID of the network to connect"
+        default "SSID"
+        help
+            SSID of the network
+
+    config FD_WIFI_PASS
+        string "Password of the network to connect"
+        default "PASSWORD"
+        help
+            Password of the network
+
+    config FD_WEBSOCKET_ADDR
+        string "Websocket address to send data"
+        default "ws://websocketdir.com/"
+        help
+            Url to websocket to send data
+
+    choice FD_MODE
+        prompt "Bootloader optimization Level"
+        default FD_MODE_MONITOR
+        help
+            Mode of the module
+
+        config FD_MODE_SEND_DATA
+            bool "ONLY SEND DATA"
+        config FD_MODE_FALL_DETECTION
+            bool "ONLY DETECT FALLS"
+        config FD_MODE_FALL_DETECTION_SEND_DATA
+            bool "DETECT FALLS AND SEND DATA"
+    endchoice
+endmenu
